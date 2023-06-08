@@ -1,0 +1,199 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="normalize.css">
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--blue: #345FF6;
+		--gunmetal: #253347;
+		--dark-blue: #5E6E85;
+		--light-blue: #D8E2E7;
+		--white: #FFF;
+	}
+
+	@font-face {
+  		font-family: "Inter", sans-serif;
+  		src: local("Inter"),
+    	url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+	}
+
+	html {
+		font-family: "Inter", sans-serif;
+		font-size: 62.5%;
+	}
+
+	*,
+	*::after,
+	*::before {
+		box-sizing: border-box;
+	}
+
+	body {
+		color: var(--gunmetal);
+		font-weight: 600;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	h1 {
+		font-size: 6.4rem;
+		line-height: 7rem;
+	}
+
+	h2 {
+		font-size: 4.8rem;
+		line-height: 5.3rem;
+	}
+
+	h3 {
+		font-size: 2.4rem;
+		line-height: 2.9rem;
+	}
+
+	h4 {
+		font-size: 2rem;
+		line-height: 2.4rem;
+	}
+
+	h1, h2, h3, h4, input {
+		letter-spacing: -0.05em;
+		margin: 0;
+	}
+
+	p {
+		color: var(--dark-blue);
+		font-size: 1.6rem;
+		font-weight: 400;
+		line-height: 2.4rem;
+		margin: 0;
+	}
+
+	p.text-bold {
+		font-weight: 600;
+	}
+
+	p.text-small {
+		font-size: 1.4rem;
+	}
+
+	label {
+		font-size: 1.6rem;
+		font-weight: 600;
+		padding-left: 1rem;
+	}
+
+	input {
+		-webkit-appearance: none;
+		appearance: none;
+	}
+
+	input[type="number"] {
+		color: var(--gunmetal);
+		border: .1rem solid var(--light-blue);
+		border-radius: 1.2rem;
+		font-size: 2.4rem;
+		font-weight: 600;
+		padding: 0 2.4rem;
+	}
+
+	input[type="number"]:focus {
+		outline: 0;
+		border-color: var(--blue);
+	}
+
+	input[type="number"]::placeholder {
+		color: var(--gunmetal);
+		opacity: 0.25;
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type="number"],
+	.input-wrapper {
+		position: relative;
+		width: 30rem;
+		height: 7rem;
+	}
+
+	.input-wrapper:has( input[type="number"] )::after {
+		content: 'cm';
+		color: var(--blue);
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 2.4rem;
+		font-size: 2.4rem;
+		font-weight: 600;
+		letter-spacing: -0.05em;
+	}
+
+	input[type="radio"] {
+		width: 3.1rem;
+		height: 3.1rem;
+		border: .1rem solid var(--light-blue);
+		border-radius: 50%;
+		/* transform: translateY(.7rem); */
+		display: grid;
+  		place-content: center;
+	}
+
+	input[type="radio"]:hover {
+		cursor: pointer;
+		border-color: var(--blue);
+	}
+
+	input[type="radio"]::before {
+		content: "";
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		transform: scale(0);
+		transition: 120ms transform ease-in-out;
+		box-shadow: inset 1.5rem 1.5rem var(--blue);
+	}
+
+	input[type="radio"]:checked {
+		background-color: rgba(52, 95, 246, 0.15);
+		border-color: transparent;
+	}
+
+	input[type="radio"]:checked::before {
+  		transform: scale(1);
+	}
+
+	.container {
+		max-width: 111.6rem;
+		margin: auto;
+	}
+
+	.row .col {
+        flex: 1;
+    }
+</style> 
