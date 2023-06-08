@@ -1,0 +1,25 @@
+/**
+ * Styles for calculator
+ */
+.calculator {
+    background: var(--white);
+    box-shadow: 1.6rem 3.2rem 5.6rem rgba(143, 174, 207, 0.25);
+    border-radius: 1.6rem;
+    padding: 3.2rem;
+    position: absolute;
+    top: 18rem;
+    right: 14rem;
+}
+
+.fieldWrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 2.4rem;
+    margin-top: 3.5rem;
+}
+
+.radioWrapper {
+    display: flex;
+    align-items: center;
+    width: 23.8rem;
+}

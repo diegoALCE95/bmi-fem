@@ -1,8 +1,9 @@
 ---
-
+import Calculator from './react/Calculator.jsx'
 ---
 
 <div class="hero">
+
     <div class="bg-wrapper">
         <img src="images/logo.svg" alt="logo">
 
@@ -14,11 +15,14 @@
             </p>
         </div>
     </div>
+
+	<Calculator client:only="react" />
 </div>
 
 <style>
     .hero {
 		margin-left: 2.4rem;
+		position: 
 	}
 
 	.hero .bg-wrapper {
